@@ -94,16 +94,19 @@ class _HomePageState extends ConsumerState<HomePage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const Text(
-                        "Livraisons",
+                        "Menu",
                         style: TextStyle(
-                          color: AppColors.greyDark,
+                         
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Gap(3.h),
+                          Gap(3.h),
                       DrawerMenuItem(
-                        icon: Assets.images.fluentMyLocation12Regular,
-                        text: "Suivre une livraison",
+                        icon: Assets.images.icon,
+                        text: "Daz",
+                        onTap: () {
+                          //Navigator.pushNamed(context, DeliveryListPage.name)
+                        },
                       ),
                       Gap(3.h),
                       DrawerMenuItem(
@@ -113,72 +116,69 @@ class _HomePageState extends ConsumerState<HomePage> {
                           //Navigator.pushNamed(context, DeliveryListPage.name)
                         },
                       ),
-                      Gap(4.h),
-                      const Text(
-                        "Compte",
-                        style: TextStyle(
-                          color: AppColors.greyDark,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Gap(3.h),
-                      DrawerMenuItem(
-                        icon: Assets.images.bxUser,
-                        text: "Informations personnelles",
-                      ),
-                      Gap(3.h),
-                      DrawerMenuItem(
-                        icon: Assets.images.epSetting,
-                        text: "Paramètres",
-                      ),
-                      Gap(4.h),
-                      const Text(
-                        "Parrainage",
-                        style: TextStyle(
-                          color: AppColors.greyDark,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Gap(3.h),
-                      DrawerMenuItem(
-                          icon: Assets.images.bxUser,
-                          text: "Parrainer un ami",
-                          onTap: () {
-                            //Navigator.pushNamed(context, SponsorshipPage.name);
-                          }),
-                      Gap(3.h),
+                           Gap(3.h),
                       DrawerMenuItem(
                         icon: Assets.images.gift,
-                        text: "Mes parrainages",
+                        text: "Daz Cash",
                         onTap: () {
-                          // Navigator.pushNamed(context, SponsorshipsPage.name)
+                          //Navigator.pushNamed(context, DeliveryListPage.name)
                         },
                       ),
-                      Gap(4.h),
-                      DrawerMenuItem(
-                        icon: Assets.images.icBaselineLogOut,
-                        text: "Déconnexion",
-                        onTap: () {
-                          showInfoDialog(
-                            context,
-                            message: "Se déconnecter ?",
-                            positiveLabel: "OUI",
-                            negativeLabel: "NON",
-                            positiveCallBack: () {
-                              //_homeController.logout();
-                              Navigator.pushAndRemoveUntil(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => LoginPage()),
-                                  (route) => false);
-                            },
-                          );
-                        },
-                      ),
+                  
+               
+                    
+               
+                      // DrawerMenuItem(
+                      //   icon: Assets.images.icBaselineLogOut,
+                      //   text: "Déconnexion",
+                      //   onTap: () {
+                      //     showInfoDialog(
+                      //       context,
+                      //       message: "Se déconnecter ?",
+                      //       positiveLabel: "OUI",
+                      //       negativeLabel: "NON",
+                      //       positiveCallBack: () {
+                      //         //_homeController.logout();
+                      //         Navigator.pushAndRemoveUntil(
+                      //             context,
+                      //             MaterialPageRoute(
+                      //                 builder: (context) => LoginPage()),
+                      //             (route) => false);
+                      //       },
+                      //     );
+                      //   },
+                      // ),
                     ],
                   ),
                 ),
               ),
+               
+                     Padding(
+
+                       padding: EdgeInsets.all(4.w),
+                       child: DrawerMenuItem(
+                          icon: Assets.images.icBaselineLogOut,
+                          text: "Déconnexion",
+                          
+                          onTap: () {
+                            showInfoDialog(
+                              context,
+                              message: "Se déconnecter ?",
+                              positiveLabel: "OUI",
+                              negativeLabel: "NON",
+                              positiveCallBack: () {
+                                //_homeController.logout();
+                                Navigator.pushAndRemoveUntil(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => LoginPage()),
+                                    (route) => false);
+                              },
+                            );
+                          },
+                        ),
+                     ),
+           Gap(15.h),
               Padding(
                 padding: EdgeInsets.all(4.w),
                 child: const Text(
