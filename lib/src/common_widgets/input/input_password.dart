@@ -23,6 +23,7 @@ class InputPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InputText(
+      
       controller: controller,
       obscureText: obscureText,
       suffixIcon: Padding(
