@@ -15,6 +15,7 @@ import '../../../theme/theme.dart';
 import '../../delivery/delivery.dart';
 import '../../login/login.dart';
 import '../home.dart';
+import 'CodeLivraiseur.dart';
 import 'drawer.dart';
 import 'livraisonPage1.dart';
 
@@ -160,8 +161,10 @@ class _RammassageCommandePage2State extends ConsumerState<RammassageCommandePage
                       
                         InkWell(
                           onTap: () {
-                             Navigator.push(context, MaterialPageRoute(builder: (context)=>LivraisonPage1()));
+                             Navigator.push(context, MaterialPageRoute(builder: (context)=>CodeLivraiseur1()));
                           },
+                          
+                          
                         child: Container(
                           height: 50,
                           width: MediaQuery.of(context).size.width/1.2,
