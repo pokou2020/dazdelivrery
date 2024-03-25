@@ -99,6 +99,9 @@ class $AssetsImagesGen {
   AssetGenImage get icBaselineLogOut =>
       const AssetGenImage('assets/images/ic_baseline-log-out.png');
 
+  AssetGenImage get icBaselineLogOut1 =>
+      const AssetGenImage('assets/images/ic_baseline-log-out1.png');
+
   /// File path: assets/images/icon.jpeg
   AssetGenImage get icon => const AssetGenImage('assets/images/icon.jpeg');
 

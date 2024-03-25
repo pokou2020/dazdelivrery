@@ -43,7 +43,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Text(
-                        "Faites une autre expérience de livraison",
+                        "Avec daz faites la livraison autrement",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 16.sp,
@@ -51,7 +51,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                       ),
                       Gap(2.h),
                       Text(
-                        "Prise en charge de tout type de colis",
+                        "Bénéficiez de pleins d'avantages",
                         style: TextStyle(
                           fontSize: 14.sp,
                         ),
@@ -86,8 +86,8 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                           _submit();
                         },
                       ),
-                      Gap(2.h),
-                      const RegistrationText(),
+                      
+                    
                     ],
                   ),
                 ),

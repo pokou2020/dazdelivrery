@@ -28,6 +28,377 @@ class HomePage extends ConsumerStatefulWidget {
 class _HomePageState extends ConsumerState<HomePage> {
   //late HomeController _homeController;
   //late User _user;
+   late bool _desactiver;
+      @override
+  void initState() {
+    _desactiver = false;
+  }
+  //Action appelée lors du clic sur le bouton
+  void _actionPression() {
+    setState(() {
+      _desactiver = true;
+      showDialog(
+                                barrierDismissible: false,
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return AlertDialog(
+                                    contentPadding: EdgeInsets.zero,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    content: Container(
+                                      height: MediaQuery.of(context).size.height/2.5,
+                                     
+                                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                       
+                                        children: [
+                                          Container(
+                                            height: 50,
+                                             decoration: const BoxDecoration(
+                                               color: Color.fromARGB(255, 237, 247, 255),
+                                         borderRadius: BorderRadius.only(
+                                          topLeft: Radius.circular(10),
+                                          topRight: Radius.circular(10),
+                                         )
+                                      ),
+                                             
+                                            width: MediaQuery.of(context).size.width,
+                                            child: const Center(
+                                              child: Text("Proposition de course",
+                                              style: TextStyle(
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.w600
+                                              ),
+                                              
+                                              ),
+                                            ),
+                                          ),
+                                          const Padding(
+                                            padding: EdgeInsets.all(8.0),
+                                            child: Text("Adresse de récupération",
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.w500
+                                            ),
+                                            ),
+                                          ),
+                                         const  Center(child: Padding(
+                                             padding:  EdgeInsets.only(top:8.0, left: 8, right: 8),
+                                             child: Text("Angré  7e tranche non loin du"),
+                                           )),
+                                            const Center(child: Padding(
+                                               padding: EdgeInsets.only(bottom:8.0),
+                                               child: Text("maquis bluethooth"),
+                                             )),
+                                           InkWell(
+                                            onTap: (){
+                                               showDialog(
+                                                                    barrierDismissible: false,
+                                                                    context: context,
+                                                                    builder: (BuildContext context) {
+                                                                      return AlertDialog(
+                                      contentPadding: EdgeInsets.zero,
+                                      backgroundColor: Colors.white,
+                                      shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                      ),
+                                                                       
+                                      content: Container(
+                                         height: MediaQuery.of(context).size.height/2.5,
+                                        child: Column(
+                                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                         
+                                          children: [
+                                                Container(
+                                              height: 50,
+                                                   decoration:const BoxDecoration(
+                                               color: Color.fromARGB(255, 237, 247, 255),
+                                         borderRadius: BorderRadius.only(
+                                          topLeft: Radius.circular(10),
+                                          topRight: Radius.circular(10),
+                                         )
+                                      ),
+                                             
+                                              width: MediaQuery.of(context).size.width,
+                                              child: Padding(
+                                                padding: const EdgeInsets.all(8.0),
+                                                child: Center(
+                                                child: Text("Course acceptéee",
+                                                style: TextStyle(
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.w600
+                                                ),
+                                                
+                                                ),
+                                                ),
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.only(top:8.0),
+                                              child: Text("Adresse de récupérations",
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.w500
+                                              ),
+                                              ),
+                                            ),
+                                             Padding(
+                                               padding: const EdgeInsets.only(top: 8.0, left: 8, right: 8),
+                                               child: Center(child: Text("Angré  7e tranche non loin du ")),
+                                             ),
+                                              Padding(
+                                               padding: const EdgeInsets.only(bottom: 8.0,),
+                                               child: Center(child: Text("maquis bluethooth")),
+                                             ),
+                                             Container(
+                                              height: 50,
+                                              width: MediaQuery.of(context).size.width,
+                                            
+                                              child: Center(
+                                                child: Text("Prix de la course",
+                                                style: TextStyle(
+                                                  
+                                                ),
+                                                ),
+                                              ),
+                                             ),
+                                              InkWell(
+                                                onTap: () {
+                                               Navigator.push(context, MaterialPageRoute(builder: (context)=>RammassageCommande()));
+                                              },
+                                              child: Container(
+                                                height: 50,
+                                                child: Center(
+                                                  child: Text("8500 FCFA",
+                                                  style: TextStyle(
+                                                    
+                                                  ),
+                                                  ),
+                                                ),
+                                              ),
+                                              ),
+                                          ],
+                                        ),
+                                      ),
+                                                                      );
+                                                                    },
+                                                                  );
+                                            },
+                                             child: Container(
+                                              height: 50,
+                                              color: Colors.green,
+                                              width: MediaQuery.of(context).size.width,
+                                               child: Center(
+                                                 child: Text("Accepter",
+                                                      style: TextStyle(
+                                                        color: Colors.white
+                                                      ),
+                                                      ),
+                                               ),
+                                             ),
+                                           ),
+                                    
+                                    
+                                           //Decliner la commande
+                                             Container(
+                                           
+                                            width: MediaQuery.of(context).size.width,
+                                             child: TextButton(onPressed: (){
+                                                         showDialog(
+                                                                    barrierDismissible: false,
+                                                                    context: context,
+                                                                    builder: (BuildContext context) {
+                                                                      return AlertDialog(
+                                      contentPadding: EdgeInsets.zero,
+                                      backgroundColor: Colors.white,
+                                      shape: RoundedRectangleBorder(
+                                       
+                                                                      
+                                      borderRadius: BorderRadius.circular(10),
+                                      ),
+                                   
+                                      content: Container(
+                                        height: MediaQuery.of(context).size.height/2.5,                                     child: Column(
+                                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                                Container(
+                                              height: 50,
+                                              decoration: const BoxDecoration(
+                                                 color: Color.fromARGB(255, 237, 247, 255),
+                                                  borderRadius: BorderRadius.only(
+                                                     topLeft: Radius.circular(10),
+                                                     topRight: Radius.circular(10)
+                                                  )
+                                              ),
+                                             
+                                              width: MediaQuery.of(context).size.width,
+                                              child: const Center(
+                                              child: Text("Vous pouvez toujours accepter la course",
+                                              style: TextStyle(
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w600
+                                              ),
+                                              
+                                              ),
+                                              ),
+                                            ),
+                                            const Padding(
+                                              padding: EdgeInsets.only(top:8.0),
+                                              child: Text("Adresse de récupérations",
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.w500
+                                              ),
+                                              ),
+                                            ),
+                                           const  Center(child: Padding(
+                                             padding: EdgeInsets.only(top:8.0, left:8, right: 8),
+                                             child: Text("Angré  7e tranche non loin du"),
+                                           )),
+                                             const  Center(child: Text("maquis bluethooth")),
+                                   
+                                                 InkWell(
+                                            onTap: (){
+                                               showDialog(
+                                                                    barrierDismissible: false,
+                                                                    context: context,
+                                                                    builder: (BuildContext context) {
+                                                                      return AlertDialog(
+                                      contentPadding: EdgeInsets.zero,
+                                      backgroundColor: Colors.white,
+                                      shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                      ),
+                                                                       
+                                      content: Container(
+                                         height: MediaQuery.of(context).size.height/2.5,
+                                        child: Column(
+                                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                         
+                                          children: [
+                                                Container(
+                                              height: 50,
+                                                   decoration:const BoxDecoration(
+                                               color: Color.fromARGB(255, 237, 247, 255),
+                                         borderRadius: BorderRadius.only(
+                                          topLeft: Radius.circular(10),
+                                          topRight: Radius.circular(10),
+                                         )
+                                      ),
+                                             
+                                              width: MediaQuery.of(context).size.width,
+                                              child: Padding(
+                                                padding: const EdgeInsets.all(8.0),
+                                                child: Center(
+                                                child: Text("Course acceptéee",
+                                                style: TextStyle(
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.w600
+                                                ),
+                                                
+                                                ),
+                                                ),
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.only(top:8.0),
+                                              child: Text("Adresse de récupérations",
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.w500
+                                              ),
+                                              ),
+                                            ),
+                                             Padding(
+                                               padding: const EdgeInsets.only(top: 8.0, left: 8, right: 8),
+                                               child: Center(child: Text("Angré  7e tranche non loin du ")),
+                                             ),
+                                              Padding(
+                                               padding: const EdgeInsets.only(bottom: 8.0,),
+                                               child: Center(child: Text("maquis bluethooth")),
+                                             ),
+                                             Container(
+                                              height: 50,
+                                              width: MediaQuery.of(context).size.width,
+                                            
+                                              child: Center(
+                                                child: Text("Prix de la course",
+                                                style: TextStyle(
+                                                  
+                                                ),
+                                                ),
+                                              ),
+                                             ),
+                                              InkWell(
+                                                onTap: () {
+                                                Navigator.push(context, MaterialPageRoute(builder: (context)=>RammassageCommande()));
+                                              },
+                                              child: Container(
+                                                height: 50,
+                                                child: Center(
+                                                  child: Text("8500 FCFA",
+                                                  style: TextStyle(
+                                                    
+                                                  ),
+                                                  ),
+                                                ),
+                                              ),
+                                              ),
+                                          ],
+                                        ),
+                                      ),
+                                                                      );
+                                                                    },
+                                                                  );
+                                            },
+                                             child: Container(
+                                              height: 50,
+                                              color: Colors.green,
+                                              width: MediaQuery.of(context).size.width,
+                                               child: Center(
+                                                 child: Text("Prendre la course",
+                                                      style: TextStyle(
+                                                        color: Colors.white
+                                                      ),
+                                                      ),
+                                               ),
+                                             ),
+                                           ),
+                                              InkWell(
+                                                onTap: () {
+                                              Navigator.of(context).pop();
+                                              },
+                                              child: Container(
+                                                height: 50,
+                                                child: Center(
+                                                  child: Text("Confirmer l'annulation",
+                                                  style: TextStyle(
+                                                    color: Colors.orange
+                                                  ),
+                                                  ),
+                                                ),
+                                              ),
+                                              ),
+                                          ],
+                                        ),
+                                      ),
+                                                                      );
+                                                                    },
+                                                                  );
+                                             // Navigator.push(context, MaterialPageRoute(builder: (context)=>RammassageCommande()));
+                                             }, child: Text("Décliner",
+                                                  style: TextStyle(
+                                                    color: Colors.orange
+                                                  ),
+                                                  ),),
+                                           ),
+                                        ],
+                                      ),
+                                    ),
+                                  );
+                                },
+                              );
+    });
+  }
+
   final Completer<GoogleMapController> _completer = Completer();
   GlobalKey<ScaffoldState> _globalKey = GlobalKey<ScaffoldState>();
   static CameraPosition _cameraPosition = CameraPosition(
@@ -35,19 +406,11 @@ class _HomePageState extends ConsumerState<HomePage> {
     zoom: 14,
   );
 
-  @override
-  void initState() {
-    //_homeController = ref.read(homeControllerProvider);
-    //_user = _homeController.getUser();
-    super.initState();
-    //WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-    //  getDeliveries();
-    //});
-  }
+
 
   @override
   Widget build(BuildContext context) {
-    final double drawerWidth = MediaQuery.of(context).size.width * .8;
+    
     return Scaffold(
       
       key: _globalKey,
@@ -55,20 +418,20 @@ class _HomePageState extends ConsumerState<HomePage> {
       body: Container(
         
         decoration: BoxDecoration(
-          image: DecorationImage(image: AssetImage("assets/images/tracking.png"), fit: BoxFit.cover)
+          image: DecorationImage(image: AssetImage("assets/images/tracking.png"), fit: BoxFit.cover, )
         ),
         child: SafeArea(
           
           child: Stack(
             children: [
               Positioned(
-                child: Padding(
-                  padding: EdgeInsets.all(4.w),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Container(
                               height: 50,
@@ -78,7 +441,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                               child: InkWell(
                                   onTap: () =>
                                       _globalKey.currentState?.openDrawer(),
-                                  child: Assets.images.ciMenuAlt01.image())),
+                                  child: Assets.images.ciMenuAlt01.image(width: 5.w))),
                           InkWell(
                             onTap: () {
                               showInfoDialog(
@@ -96,7 +459,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                                 },
                               );
                             },
-                            child: Container(
+                            child:  _desactiver ? Text(""):Container(
                               height: 40,
                               width: MediaQuery.of(context).size.width / 1.5,
                               decoration: BoxDecoration(
@@ -115,8 +478,8 @@ class _HomePageState extends ConsumerState<HomePage> {
                           ),
                         ],
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
            
@@ -126,7 +489,7 @@ class _HomePageState extends ConsumerState<HomePage> {
               //    onMapCreated: (GoogleMapController controller) {
               //      _completer.complete(controller);
               //    },
-              // ),
+              // ),f
               Positioned(
                 bottom: 0,
                 child: Container(
@@ -139,202 +502,10 @@ class _HomePageState extends ConsumerState<HomePage> {
                           topRight: Radius.circular(15))),
                   child: Column(
                     children: [
-                      InkWell(
-                        onTap: () {
-                        showDialog(
-                                barrierDismissible: false,
-                                context: context,
-                                builder: (BuildContext context) {
-                                  return AlertDialog(
-                                    
-                                    backgroundColor: Colors.white,
-                                    shape: RoundedRectangleBorder(
-                                       
-                                  
-                                      borderRadius: BorderRadius.circular(10),
-                                    ),
-                                    title: Text("Proposition de course"),
-                                    content: Container(
-                                      height: MediaQuery.of(context).size.height/4,
-                                      child: Column(
-                                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                        children: [
-                                          Text("Adresse de récupération",
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.w600
-                                          ),
-                                          ),
-                                           Center(child: Text("Angré  7e tranche non loin du maquis bluethooth")),
-                                           InkWell(
-                                            onTap: () {
-                                                     showDialog(
-                                barrierDismissible: false,
-                                context: context,
-                                builder: (BuildContext context) {
-                                  return AlertDialog(
-                                    
-                                    backgroundColor: Colors.white,
-                                    shape: RoundedRectangleBorder(
-                                       
-                                  
-                                      borderRadius: BorderRadius.circular(10),
-                                    ),
-                                    title: Center(
-                                      child: const Text("Course acceptée",
-                                      style: TextStyle(
-                                       
-                                      ),
-                                      ),
-                                    ),
-                                    content: Container(
-                                      height: MediaQuery.of(context).size.height/4,
-                                      child: Column(
-                                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                        children: [
-                                          Text("Adresse de récupération",
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.w600
-                                          ),
-                                          ),
-                                           Center(child: Text("Angré  7e tranche non loin du maquis bluethooth")),
-                                           Container(
-                                            height: 30,
-                                            width: MediaQuery.of(context).size.width,
-                                           
-                                            child: Center(
-                                              child: Text("Prix de la course",
-                                              style: TextStyle(
-                                               
-                                              ),
-                                              ),
-                                            ),
-                                           ),
-                                            Container(
-                                              height: 30,
-                                              child: Text("8 500 FCFA",
-                                              style: TextStyle(
-                                               fontWeight: FontWeight.bold,
-                                               fontSize: 20
-                                              ),
-                                              ),
-                                            ),
-                                        ],
-                                      ),
-                                    ),
-      
-                                    actions: [
-      
-                                      InkWell(
-                                        onTap: (){
-                                           Navigator.push(context, MaterialPageRoute(builder: (context)=>RammassageCommande()));
-                                        },
-                                        child: Text("Ok"))
-                                    ],
-                                  );
-                                },
-                              );
-                                            },
-                                             child: Container(
-                                              height: 60,
-                                              width: MediaQuery.of(context).size.width,
-                                              color: Colors.green,
-                                              child: Center(
-                                                child: Text("Accepter",
-                                                style: TextStyle(
-                                                  color: Colors.white
-                                                ),
-                                                ),
-                                              ),
-                                             ),
-                                           ),
-                                            InkWell(
-                                              onTap: (){
-                                          
-                                          showDialog(
-                                barrierDismissible: false,
-                                context: context,
-                                builder: (BuildContext context) {
-                                  return AlertDialog(
-                                    
-                                    backgroundColor: Colors.white,
-                                    shape: RoundedRectangleBorder(
-                                       
-                                  
-                                      borderRadius: BorderRadius.circular(10),
-                                    ),
-                                    title: const Text("Vous pouvez toujours accepter la course",
-                                    style: TextStyle(
-                                      fontSize: 15
-                                    ),
-                                    ),
-                                    content: Container(
-                                      height: MediaQuery.of(context).size.height/4,
-                                      child: Column(
-                                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                        children: [
-                                          Text("Adresse de récupération",
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.w600
-                                          ),
-                                          ),
-                                           Center(child: Text("Angré  7e tranche non loin du maquis bluethooth")),
-                                           InkWell(
-                                            onTap: () {
-                                              
-                                            },
-                                             child: Container(
-                                              height: 50,
-                                              width: MediaQuery.of(context).size.width,
-                                              color: Colors.green,
-                                              child: Center(
-                                                child: Text("Prendre la course",
-                                                style: TextStyle(
-                                                  color: Colors.white
-                                                ),
-                                                ),
-                                              ),
-                                             ),
-                                           ),
-                                            InkWell(
-                                                onTap: () {
-                                              Navigator.of(context).pop();
-                                            },
-                                              child: Container(
-                                                height: 50,
-                                                child: Center(
-                                                  child: Text("Confirmer l'annulation",
-                                                  style: TextStyle(
-                                                    color: Colors.orange
-                                                  ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                        ],
-                                      ),
-                                    ),
-                                  );
-                                },
-                              );
-                                              },
-                                              child: Container(
-                                                height:30 ,
-                                                child: Center(
-                                                  child: Text("Décliner",
-                                                  style: TextStyle(
-                                                    color: Colors.orange
-                                                  ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                        ],
-                                      ),
-                                    ),
-                                  );
-                                },
-                              );
-                        },
+                       InkWell(
+                        onTap:_desactiver?null:_actionPression,  
+                       
+                        
                         child: Container(
                           height: 50,
                           width: MediaQuery.of(context).size.width,
@@ -359,6 +530,9 @@ class _HomePageState extends ConsumerState<HomePage> {
                             ],
                           ),
                         ),
+                      ),
+                       SizedBox(
+                        height: 10,
                       ),
                       Center(child: Text("Recette du jour")),
                       SizedBox(

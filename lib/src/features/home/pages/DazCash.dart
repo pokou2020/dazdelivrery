@@ -39,14 +39,9 @@ class _DazCashState extends State<DazCash> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                        height: 50,
-                        width: 50,
-                        decoration: BoxDecoration(
-                            color: Colors.white, shape: BoxShape.circle),
-                        child: InkWell(
-                            onTap: () => _globalKey.currentState?.openDrawer(),
-                            child: Assets.images.ciMenuAlt01.image())),
+                    child: InkWell(
+                        onTap: () => _globalKey.currentState?.openDrawer(),
+                        child: Assets.images.ciMenuAlt01.image()),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 90),

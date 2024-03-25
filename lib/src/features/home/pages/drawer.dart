@@ -112,11 +112,10 @@ class _DrawersState extends State<Drawers> {
                      Padding(
 
                        padding: EdgeInsets.all(4.w),
-                       child: DrawerMenuItem(
-                          icon: Assets.images.icBaselineLogOut,
-                          text: "Déconnexion",
-                          
-                          onTap: () {
+                       child:Row(
+                        children: [
+                           Assets.images.icBaselineLogOut1.image(width: 5.w),
+                           TextButton(onPressed: (){
                             showInfoDialog(
                               context,
                               message: "Se déconnecter ?",
@@ -131,8 +130,17 @@ class _DrawersState extends State<Drawers> {
                                     (route) => false);
                               },
                             );
-                          },
-                        ),
+                           },
+                           child: Text("Déconnexion",
+                           style: TextStyle(
+                            color:Colors.red
+                           ),
+                           ),
+                           )
+                        
+               
+                        ],
+                       )
                      ),
            Gap(15.h),
               Padding(

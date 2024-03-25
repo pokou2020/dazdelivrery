@@ -28,6 +28,7 @@ class DrawerMenuItem extends StatelessWidget {
           Gap(3.w),
           Text(
             text,
+            
             style: TextStyle(
               fontSize: 12.sp,
             ),
