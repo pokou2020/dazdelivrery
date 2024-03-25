@@ -29,37 +29,430 @@ class _HistoriqueState extends State<Historique> {
     key: _globalKey,
       drawer:Drawers(),
 
-      body: SafeArea(
-        child: Stack(
-          children: [
-            Container(
-              height: 70,
-                color: Color.fromARGB(255, 237, 247, 255),
+      body: Column(
+        children: [
+          Expanded(
+            flex: 1,
+            child: Container(
+             
+               color: Color.fromARGB(255, 237, 247, 255),
+             
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                      
-                      Container(
-                            height: 50,
-                            width: 50,
-                            decoration: BoxDecoration(
-                                color: Colors.white, shape: BoxShape.circle),
-                            child: InkWell(
-                                onTap: () =>
-                                    _globalKey.currentState?.openDrawer(),
-                                child: Assets.images.ciMenuAlt01.image())),
-                  Text("Historique des livraisons",
-                  style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 20
-                  ),
+                      InkWell(
+                          onTap: () =>
+                              _globalKey.currentState?.openDrawer(),
+                          child: Assets.images.ciMenuAlt01.image()),
+                  Center(
+                    child: Text("Historique des livraisons",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 20
+                    ),
+                    ),
                   ),
                 ],
               ),
             ),
-          
-          ],
-        ),
+          ),
+          Expanded(
+            flex: 6,
+            child:  Container(
+            child: Padding(
+              padding: const EdgeInsets.only(top:8.0, left: 12, right: 12, bottom: 8),
+              child: ListView(
+                children: [
+                 Padding(
+                   padding: const EdgeInsets.only(bottom:15.0),
+                   child: Text("Mercredi,21 septembre 2023",
+                    style: const TextStyle(
+                    color:  Colors.grey,
+                    fontSize: 18
+                    ),
+                    ),
+                 ),
+
+                  Padding(
+                     padding: const EdgeInsets.only(bottom:15.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Container(
+                          height: 50,
+                          width: 50,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.white
+                          ),
+                          child: Icon(Icons.file_open_outlined, color: Colors.green,) ,
+                        ),
+                      
+                            Container(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                         children: [
+                             Text("Colis #7258452457",
+                             style: TextStyle(
+                              fontSize: 18
+                             ),
+                             ),
+                             SizedBox(height: 10,),
+                        Text("Angré 7e tranche, Cocody",
+                            style: TextStyle(
+                              fontSize: 15
+                             ),
+                        ),
+                         ],
+                          ),
+                        ),
+                          Container(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                         children: [
+                             Text("1700 FCFA", 
+                             style: TextStyle(
+                              color: Colors.green,
+                               fontSize: 15
+                             ),
+                             ),
+                             SizedBox(height: 10,),
+                        Text("11:30",
+                          style: TextStyle(
+                              fontSize: 15
+                             ),
+                        
+                        ),
+                         ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Divider(
+                    indent: 55,
+                  ),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom:15.0),
+                        child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                          children: [
+                           Container(
+                          height: 50,
+                          width: 50,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.white
+                          ),
+                          child: Icon(Icons.file_open_outlined, color: Colors.green,) ,
+                        ),
+                                          
+                            Container(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                         children: [
+                             Text("Colis #7258452457",
+                             style: TextStyle(
+                              fontSize: 18
+                             ),
+                             ),
+                             SizedBox(height: 10,),
+                        Text("Angré 7e tranche, Cocody",
+                            style: TextStyle(
+                              fontSize: 15
+                             ),
+                        ),
+                         ],
+                          ),
+                        ),
+                          Container(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                         children: [
+                             Text("1700 FCFA", 
+                             style: TextStyle(
+                              color: Colors.green,
+                               fontSize: 15
+                             ),
+                             ),
+                             SizedBox(height: 10,),
+                        Text("11:30",
+                          style: TextStyle(
+                              fontSize: 15
+                             ),
+                        
+                        ),
+                         ],
+                          ),
+                        ),
+                                          ],
+                                        ),
+                      ),
+
+                           Divider(
+                    indent: 55,
+                  ),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom:15.0),
+                        child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                          children: [
+                           Container(
+                          height: 50,
+                          width: 50,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.white
+                          ),
+                          child: Icon(Icons.file_open_outlined, color: Colors.green,) ,
+                        ),
+                                          
+                            Container(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                         children: [
+                             Text("Colis #7258452457",
+                             style: TextStyle(
+                              fontSize: 18
+                             ),
+                             ),
+                             SizedBox(height: 10,),
+                        Text("Angré 7e tranche, Cocody",
+                            style: TextStyle(
+                              fontSize: 15
+                             ),
+                        ),
+                         ],
+                          ),
+                        ),
+                          Container(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                         children: [
+                             Text("1700 FCFA", 
+                             style: TextStyle(
+                              color: Colors.green,
+                               fontSize: 15
+                             ),
+                             ),
+                             SizedBox(height: 10,),
+                        Text("11:30",
+                          style: TextStyle(
+                              fontSize: 15
+                             ),
+                        
+                        ),
+                         ],
+                          ),
+                        ),
+                                          ],
+                                        ),
+                      ),
+
+                           Divider(
+                    indent: 55,
+                  ),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom:15.0),
+                        child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                          children: [
+                           Container(
+                          height: 50,
+                          width: 50,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.white
+                          ),
+                          child: Icon(Icons.file_open_outlined, color: Colors.green,) ,
+                        ),
+                                          
+                            Container(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                         children: [
+                             Text("Colis #7258452457",
+                             style: TextStyle(
+                              fontSize: 18
+                             ),
+                             ),
+                             SizedBox(height: 10,),
+                        Text("Angré 7e tranche, Cocody",
+                            style: TextStyle(
+                              fontSize: 15
+                             ),
+                        ),
+                         ],
+                          ),
+                        ),
+                          Container(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                         children: [
+                             Text("1700 FCFA", 
+                             style: TextStyle(
+                              color: Colors.green,
+                               fontSize: 15
+                             ),
+                             ),
+                             SizedBox(height: 10,),
+                        Text("11:30",
+                          style: TextStyle(
+                              fontSize: 15
+                             ),
+                        
+                        ),
+                         ],
+                          ),
+                        ),
+                                          ],
+                                        ),
+                      ),
+                        Padding(
+                   padding: const EdgeInsets.only(bottom:15.0),
+                   child: Text("Mardi,21 septembre 2023",
+                    style: const TextStyle(
+                    color:  Colors.grey,
+                    fontSize: 18
+                    ),
+                    ),
+                 ),
+                          Divider(
+                    indent: 35,
+                  ),
+                 
+                      Padding(
+                        padding: const EdgeInsets.only(bottom:15.0),
+                        child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                          children: [
+                           Container(
+                          height: 50,
+                          width: 50,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.white
+                          ),
+                          child: Icon(Icons.file_open_outlined, color: Colors.green,) ,
+                        ),
+                                          
+                            Container(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                         children: [
+                             Text("Colis #7258452457",
+                             style: TextStyle(
+                              fontSize: 18
+                             ),
+                             ),
+                             SizedBox(height: 10,),
+                        Text("Angré 7e tranche, Cocody",
+                            style: TextStyle(
+                              fontSize: 15
+                             ),
+                        ),
+                         ],
+                          ),
+                        ),
+                          Container(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                         children: [
+                             Text("1700 FCFA", 
+                             style: TextStyle(
+                              color: Colors.green,
+                               fontSize: 15
+                             ),
+                             ),
+                             SizedBox(height: 10,),
+                        Text("11:30",
+                          style: TextStyle(
+                              fontSize: 15
+                             ),
+                        
+                        ),
+                         ],
+                          ),
+                        ),
+                                          ],
+                                        ),
+                      ),
+                                Divider(
+                    indent: 55,
+                  ),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom:15.0),
+                        child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                          children: [
+                           Container(
+                          height: 50,
+                          width: 50,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.orange
+                          ),
+                          child: Icon(Icons.file_open_outlined, color: Colors.white,) ,
+                        ),
+                                          
+                            Container(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                         children: [
+                             Text("Colis #7258452457",
+                             style: TextStyle(
+                              fontSize: 18
+                             ),
+                             ),
+                             SizedBox(height: 10,),
+                        Text("Angré 7e tranche, Cocody",
+                            style: TextStyle(
+                              fontSize: 15
+                             ),
+                        ),
+                         ],
+                          ),
+                        ),
+                          Container(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                         children: [
+                             Text("0 FCFA", 
+                             style: TextStyle(
+                              
+                             ),
+                             ),
+                             SizedBox(height: 10,),
+                        Text("11:30",
+                          style: TextStyle(
+                              fontSize: 15
+                             ),
+                        
+                        ),
+                         ],
+                          ),
+                        ),
+                                          ],
+                                        ),
+                      ),
+                ],
+              ),
+            ),
+          ))
+        ],
       ),
     );
   }

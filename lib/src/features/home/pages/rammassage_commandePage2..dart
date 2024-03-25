@@ -132,7 +132,7 @@ class _RammassageCommandePage2State extends ConsumerState<RammassageCommandePage
                         title: Text("Expéditeur"),
                         subtitle: Text("0747518089"),
                        
-                        trailing: IconButton(onPressed: (){}, icon: Icon(Icons.call)),
+                        trailing: Assets.images.phone.image(width: 9.w)
                       ),
                       // Column(
                         
@@ -151,7 +151,7 @@ class _RammassageCommandePage2State extends ConsumerState<RammassageCommandePage
                        ListTile(
                         title: Text("Adresse"),
                         subtitle: Text("1245 Boulevard Angré Chateau Cocody Cote d'ivoire"),
-                        trailing: IconButton(onPressed: (){}, icon: Icon(Icons.add_location_alt_sharp)),
+                        trailing:Assets.images.localisation.image(width: 9.w)
                       ),
                         ListTile(
                         title: Text("Client et numèro de commande"),

@@ -50,9 +50,17 @@ class $AssetsImagesGen {
   AssetGenImage get carbonDeliveryParcel =>
       const AssetGenImage('assets/images/carbon_delivery-parcel.png');
 
-  /// File path: assets/images/ci_menu_alt_01.png
+  /// File path: assets/images/localisation.png
   AssetGenImage get ciMenuAlt01 =>
       const AssetGenImage('assets/images/ci_menu_alt_01.png');
+
+      /// File path: assets/images/ci_menu_alt_01.png
+  AssetGenImage get localisation =>
+      const AssetGenImage('assets/images/localisation.png');
+
+      /// File path: assets/images/telephone.png
+  AssetGenImage get phone =>
+      const AssetGenImage('assets/images/telephone.png');
 
   /// File path: assets/images/clarity-eye.png
   AssetGenImage get clarityEye =>
