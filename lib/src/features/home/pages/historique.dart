@@ -37,23 +37,27 @@ class _HistoriqueState extends State<Historique> {
              
                color: Color.fromARGB(255, 237, 247, 255),
              
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                     
-                      InkWell(
-                          onTap: () =>
-                              _globalKey.currentState?.openDrawer(),
-                          child: Assets.images.ciMenuAlt01.image()),
-                  Center(
-                    child: Text("Historique des livraisons",
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 20
+              child: Padding(
+                 padding: const EdgeInsets.only(top:15.0),
+                child: Row(
+                  
+                  children: [
+                       
+                        InkWell(
+                            onTap: () =>
+                                _globalKey.currentState?.openDrawer(),
+                            child: Assets.images.ciMenuAlt01.image()),
+                    Padding(
+                     padding: const EdgeInsets.only(left: 20),
+                      child: Text("Historique des livraisons",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 20
+                      ),
+                      ),
                     ),
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
@@ -90,6 +94,8 @@ class _HistoriqueState extends State<Historique> {
                         ),
                       
                             Container(
+                              height: 50,
+                              width: 200,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -109,6 +115,8 @@ class _HistoriqueState extends State<Historique> {
                           ),
                         ),
                           Container(
+                            height: 50,
+                              width: 80,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -151,6 +159,8 @@ class _HistoriqueState extends State<Historique> {
                         ),
                                           
                             Container(
+                              height: 50,
+                              width: 200,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -170,6 +180,8 @@ class _HistoriqueState extends State<Historique> {
                           ),
                         ),
                           Container(
+                            height: 50,
+                              width: 80,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -213,6 +225,8 @@ class _HistoriqueState extends State<Historique> {
                         ),
                                           
                             Container(
+                              height: 50,
+                              width: 200,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -232,6 +246,8 @@ class _HistoriqueState extends State<Historique> {
                           ),
                         ),
                           Container(
+                            height: 50,
+                              width: 80,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -275,6 +291,8 @@ class _HistoriqueState extends State<Historique> {
                         ),
                                           
                             Container(
+                              height: 50,
+                              width: 200,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -294,6 +312,8 @@ class _HistoriqueState extends State<Historique> {
                           ),
                         ),
                           Container(
+                            height: 50,
+                              width: 80,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -317,6 +337,9 @@ class _HistoriqueState extends State<Historique> {
                                           ],
                                         ),
                       ),
+                                 Divider(
+                    indent: 35,
+                  ),
                         Padding(
                    padding: const EdgeInsets.only(bottom:15.0),
                    child: Text("Mardi,21 septembre 2023",
@@ -326,14 +349,12 @@ class _HistoriqueState extends State<Historique> {
                     ),
                     ),
                  ),
-                          Divider(
-                    indent: 35,
-                  ),
+               
                  
                       Padding(
                         padding: const EdgeInsets.only(bottom:15.0),
                         child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                           children: [
                            Container(
                           height: 50,
@@ -346,6 +367,9 @@ class _HistoriqueState extends State<Historique> {
                         ),
                                           
                             Container(
+                              height: 50,
+                              width: 200,
+                              
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -365,6 +389,8 @@ class _HistoriqueState extends State<Historique> {
                           ),
                         ),
                           Container(
+                             height: 50,
+                              width: 80,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -391,10 +417,11 @@ class _HistoriqueState extends State<Historique> {
                                 Divider(
                     indent: 55,
                   ),
+                   
                       Padding(
                         padding: const EdgeInsets.only(bottom:15.0),
                         child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                           children: [
                            Container(
                           height: 50,
@@ -403,10 +430,13 @@ class _HistoriqueState extends State<Historique> {
                             shape: BoxShape.circle,
                             color: Colors.orange
                           ),
-                          child: Icon(Icons.file_open_outlined, color: Colors.white,) ,
+                          child: Icon(Icons.file_open_outlined, color: Color.fromARGB(255, 247, 247, 247),) ,
                         ),
                                           
                             Container(
+                              height: 50,
+                              width: 200,
+                              
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -426,13 +456,16 @@ class _HistoriqueState extends State<Historique> {
                           ),
                         ),
                           Container(
+                            height: 50,
+                              width: 80,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                          children: [
                              Text("0 FCFA", 
                              style: TextStyle(
-                              
+                              color: Colors.green,
+                               fontSize: 15
                              ),
                              ),
                              SizedBox(height: 10,),
@@ -447,7 +480,8 @@ class _HistoriqueState extends State<Historique> {
                         ),
                                           ],
                                         ),
-                      ),
+                      ),   
+                     
                 ],
               ),
             ),

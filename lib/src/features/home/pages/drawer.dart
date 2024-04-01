@@ -36,17 +36,18 @@ class _DrawersState extends State<Drawers> {
                 ),
                 padding: EdgeInsets.symmetric(
                   horizontal: 4.w,
-                  vertical: 4.h,
+                  vertical: 6.h,
                 ),
                 child: Row(
                   children: [
+                 
                     CircleAvatar(),
-                    Gap(3.w),
+                    Gap(5.w),
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Gap(0.5.h),
+                          Gap(0.4.h),
                           Text(
                             "patricktiess@gmail.com",
                             style: TextStyle(
