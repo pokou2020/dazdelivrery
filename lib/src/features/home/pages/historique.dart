@@ -28,29 +28,30 @@ class _HistoriqueState extends State<Historique> {
     final double drawerWidth = MediaQuery.of(context).size.width * .8;
 
     return Scaffold(
-        key: _globalKey,
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          backgroundColor: AppColors.grey2,
-          title: const Text(
-            'Historique des livraisons',
-            style: TextStyle(
-              color: Colors.black,
-            ),
+      key: _globalKey,
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: AppColors.grey2,
+        title: const Text(
+          'Historique des livraisons',
+          style: TextStyle(
+            color: Colors.black,
           ),
-          centerTitle: true,
         ),
-        body: Padding(
-          padding: EdgeInsets.all(4.w),
-          child: ListView.separated(
-            itemCount: 3,
-            itemBuilder: (context, index) {
-              return DeliveryHistoricAmountItem(
-                index: index,
-              );
-            },
-            separatorBuilder: (context, index) => Gap(2.h),
-          ),
-        ));
+        centerTitle: true,
+      ),
+      body: Padding(
+        padding: EdgeInsets.all(4.w),
+        child: ListView.separated(
+          itemCount: 3,
+          itemBuilder: (context, index) {
+            return DeliveryHistoricAmountItem(
+              index: index,
+            );
+          },
+          separatorBuilder: (context, index) => Gap(2.h),
+        ),
+      ),
+    );
   }
 }

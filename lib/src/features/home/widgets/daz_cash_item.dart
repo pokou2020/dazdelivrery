@@ -5,22 +5,19 @@ import 'package:sizer/sizer.dart';
 
 import '../../../../gen/assets.gen.dart';
 import '../../../theme/theme.dart';
-import '../delivery.dart';
 
-class DeliveryHistoricAmountItem extends StatefulWidget {
+class DazCashItem extends StatefulWidget {
   final int index;
 
-  const DeliveryHistoricAmountItem({
+  const DazCashItem({
     required this.index,
   });
 
   @override
-  State<DeliveryHistoricAmountItem> createState() =>
-      _DeliveryHistoricAmountItemState();
+  State<DazCashItem> createState() => _DeliveryHistoricAmountItemState();
 }
 
-class _DeliveryHistoricAmountItemState
-    extends State<DeliveryHistoricAmountItem> {
+class _DeliveryHistoricAmountItemState extends State<DazCashItem> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -39,7 +36,7 @@ class _DeliveryHistoricAmountItemState
             ListView.separated(
               itemBuilder: (context, index) {
                 bool isDelivered = index % 3 == 0;
-                return _HistoricAmountItem(isDelivered: isDelivered);
+                return _DazCashItem(isDelivered: isDelivered);
               },
               separatorBuilder: (context, index) => Gap(2.h),
               itemCount: 3,
@@ -53,18 +50,18 @@ class _DeliveryHistoricAmountItemState
   }
 }
 
-class _HistoricAmountItem extends StatefulWidget {
+class _DazCashItem extends StatefulWidget {
   final bool isDelivered;
 
-  const _HistoricAmountItem({
+  const _DazCashItem({
     required this.isDelivered,
   });
 
   @override
-  State<_HistoricAmountItem> createState() => _HistoricAmountItemState();
+  State<_DazCashItem> createState() => _DazCashItemState();
 }
 
-class _HistoricAmountItemState extends State<_HistoricAmountItem> {
+class _DazCashItemState extends State<_DazCashItem> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -80,9 +77,7 @@ class _HistoricAmountItemState extends State<_HistoricAmountItem> {
                   children: [
                     Container(
                       decoration: BoxDecoration(
-                        color: !widget.isDelivered
-                            ? Colors.white
-                            : AppColors.orange,
+                        color: Colors.white,
                         shape: BoxShape.circle,
                         boxShadow: [
                           BoxShadow(
@@ -95,11 +90,11 @@ class _HistoricAmountItemState extends State<_HistoricAmountItem> {
                       ),
                       padding: EdgeInsets.all(2.w),
                       alignment: Alignment.center,
-                      child: Assets.images.file.svg(
-                          width: 4.w,
-                          color: widget.isDelivered
-                              ? Colors.white
-                              : AppColors.green),
+                      child: widget.isDelivered
+                          ? Assets.images.solarCircleTopUpBold
+                              .svg(color: Colors.black)
+                          : Assets.images.mingcuteTransferLine
+                              .svg(color: Colors.black),
                     ),
                     Gap(4.w),
                     Expanded(
@@ -108,14 +103,16 @@ class _HistoricAmountItemState extends State<_HistoricAmountItem> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Colis #129792134",
+                            widget.isDelivered ? "Recharge" : "Transfert",
                             style: TextStyle(
                               fontSize: 12.sp,
                             ),
                           ),
                           Gap(1.w),
                           Text(
-                            "Angré 7eme tranche",
+                            widget.isDelivered
+                                ? "O123244444"
+                                : "Kouamé Innocent",
                             style: TextStyle(
                               fontSize: 10.sp,
                             ),
@@ -130,8 +127,7 @@ class _HistoricAmountItemState extends State<_HistoricAmountItem> {
                           Text(
                             "1 500 FCFA",
                             style: TextStyle(
-                              fontSize: 12.sp,
-                            ),
+                                fontSize: 12.sp, color: AppColors.green),
                           ),
                           Gap(1.w),
                           Text(

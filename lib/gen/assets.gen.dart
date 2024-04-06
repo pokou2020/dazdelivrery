@@ -131,6 +131,10 @@ class $AssetsImagesGen {
   AssetGenImage get logoDaz =>
       const AssetGenImage('assets/images/logo-daz.png');
 
+  /// File path: assets/images/mingcute_transfer-line.svg
+  SvgGenImage get mingcuteTransferLine =>
+      const SvgGenImage('assets/images/mingcute_transfer-line.svg');
+
   /// File path: assets/images/online_dot.svg
   SvgGenImage get onlineDot =>
       const SvgGenImage('assets/images/online_dot.svg');
@@ -148,6 +152,10 @@ class $AssetsImagesGen {
 
   /// File path: assets/images/share.png
   AssetGenImage get share => const AssetGenImage('assets/images/share.png');
+
+  /// File path: assets/images/solar_circle-top-up-bold.svg
+  SvgGenImage get solarCircleTopUpBold =>
+      const SvgGenImage('assets/images/solar_circle-top-up-bold.svg');
 
   /// File path: assets/images/take-away-pana.png
   AssetGenImage get takeAwayPana =>
@@ -191,11 +199,13 @@ class $AssetsImagesGen {
         layoutGrid,
         localisation,
         logoDaz,
+        mingcuteTransferLine,
         onlineDot,
         phPackageFill,
         phPackage,
         pin,
         share,
+        solarCircleTopUpBold,
         takeAwayPana,
         telephone,
         tracking
