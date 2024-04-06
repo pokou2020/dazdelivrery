@@ -1,3 +1,4 @@
+import 'package:dazdelivery/src/common_widgets/button/button.dart';
 import 'package:dazdelivery/src/features/home/pages/livraisonPage1.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -8,7 +9,6 @@ import 'package:sizer/sizer.dart';
 import '../../../../gen/assets.gen.dart';
 import '../../../theme/theme.dart';
 import '../../login/login.dart';
-
 
 class CodeLivraiseur1 extends ConsumerStatefulWidget {
   const CodeLivraiseur1({Key? key}) : super(key: key);
@@ -48,56 +48,34 @@ class _CodeLivraiseur1State extends ConsumerState<CodeLivraiseur1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: AppColors.grey2,
+        centerTitle: true,
+        title: const Text(
+          'Code de validation',
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        ),
+      ),
+      body: Padding(
+        padding: EdgeInsets.all(4.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Container(
-              height: 70,
-               color: Color.fromARGB(255, 237, 247, 255),
-              
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                     Assets.images.biArrowLeft.image(),
-                 
-                   SizedBox(width: 50,),
-                    Text(
-                      "Code de validation",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16.sp,
-                      ),
-                    ),
-                  ],
-                ),
+            Text(
+              "Entrer le code à 4 chiffres reçu du client pour\nvalider la récuparation du colis.",
+              style: TextStyle(
+                fontSize: 13.sp,
               ),
+              textAlign: TextAlign.center,
             ),
-            SizedBox(height: 10,),
-            Center(
-              child: Text(
-                "Entrer le code à 4 chiffres recu du client pour ",
-                style: TextStyle(
-                  fontSize: 13.sp,
-                ),
-              ),
-            ),
-           
-            Center(
-              child: Text(
-                "Valider la recuperation du colis",
-                style: TextStyle(
-                  fontSize: 13.sp,
-                ),
-              ),
-            ),
-           
+            Gap(2.h),
             Padding(
-              padding: const EdgeInsets.only(left: 50, top: 20),
+              padding: EdgeInsets.symmetric(horizontal: 15.w),
               child: Center(
                 child: Pinput(
-                  
                   defaultPinTheme: defaultPinTheme,
                   focusedPinTheme: defaultPinTheme.copyDecorationWith(
                     border: const Border(
@@ -128,8 +106,6 @@ class _CodeLivraiseur1State extends ConsumerState<CodeLivraiseur1> {
                 ),
               ),
             ),
-            
-       
             Spacer(),
             Expanded(
               flex: 4,
@@ -222,11 +198,7 @@ class _CodeLivraiseur1State extends ConsumerState<CodeLivraiseur1> {
                         child: Center(
                           child: OtpKey(
                             value: "0",
-                            onTap: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) =>
-                                      const CongratulationPage()));
-                            },
+                            onTap: () {},
                           ),
                         ),
                       ),
@@ -240,82 +212,43 @@ class _CodeLivraiseur1State extends ConsumerState<CodeLivraiseur1> {
                 ],
               ),
             ),
-                   Padding(
-                     padding: const EdgeInsets.all(8.0),
-                     child: InkWell(
-                                 onTap: () {
-                             Navigator.push(context, MaterialPageRoute(builder: (context)=>LivraisonPage1()));
-                                 },
-                                 child: Container(
-                                   height: 50,
-                                   
-                                   width: MediaQuery.of(context).size.width/1.5,
-                                   decoration: BoxDecoration(
-                                     borderRadius: BorderRadius.circular(5),
-                                     color: Colors.green,
-                                    
-                                   ),
-                                   child: Center(
-                                     child: RichText(
-                      textAlign: TextAlign.center,
-                      text: TextSpan(
+            SubmitButton(
+              text: "Valider",
+              onTap: () {
+               Navigator.pop(context, true);
+              },
+            ),
+            Gap(3.w),
+            Container(
+              height: 12.w,
+              width: MediaQuery.of(context).size.width / 1.5,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5),
+                border: Border.all(
+                  color: Color(0xffCE2C09),
+                ),
+              ),
+              child: Center(
+                child: RichText(
+                  textAlign: TextAlign.center,
+                  text: TextSpan(
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontFamily: 'Raleway',
+                      fontSize: 12.sp,
+                    ),
+                    children: const [
+                      TextSpan(
+                        text: "Le client n'a pas recu le code",
                         style: TextStyle(
-                          color: Colors.black,
-                          fontFamily: 'Raleway',
-                          fontSize: 12.sp,
+                          color: Color(0xffCE2C09),
                         ),
-                        children: const [
-                        
-                          TextSpan(
-                            text: "Valider",
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        ],
                       ),
-                                     ),
-                                   ),
-                                 ),
-                               ),
-                   ),
-            SizedBox(height: 5,),
-                   Padding(
-                     padding: const EdgeInsets.all(8.0),
-                     child: InkWell(
-                                 onTap: () {
-                                   _sendConfirmationCode();
-                                 },
-                                 child: Container(
-                                   height: 50,
-                                   
-                                   width: MediaQuery.of(context).size.width/1.5,
-                                   decoration: BoxDecoration(
-                                     borderRadius: BorderRadius.circular(5),
-                                     border: Border.all(
-                      color: Colors.red
-                                     )
-                                   ),
-                                   child: Center(
-                                     child: RichText(
-                      textAlign: TextAlign.center,
-                      text: TextSpan(
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontFamily: 'Raleway',
-                          fontSize: 12.sp,
-                        ),
-                        children: const [
-                        
-                          TextSpan(
-                            text: "Le client n'a pas recu le code",
-                            style: TextStyle(color: Colors.red),
-                          ),
-                        ],
-                      ),
-                                     ),
-                                   ),
-                                 ),
-                               ),
-                   ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),

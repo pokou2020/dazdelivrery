@@ -8,11 +8,16 @@ class SubmitButton extends StatelessWidget {
   final String text;
   final Function() onTap;
   final Widget? icon;
+  final Color? color;
+  final EdgeInsets? padding;
+
   const SubmitButton({
     Key? key,
     required this.text,
     required this.onTap,
     this.icon,
+    this.color,
+    this.padding,
   }) : super(key: key);
 
   @override
@@ -21,10 +26,10 @@ class SubmitButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
-          color: AppColors.green,
-          borderRadius: BorderRadius.circular(4.w),
+          color: color ?? AppColors.green,
+          borderRadius: BorderRadius.circular(2.w),
         ),
-        padding: EdgeInsets.all(6.w),
+        padding: padding ?? EdgeInsets.all(4.w),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -39,7 +44,7 @@ class SubmitButton extends StatelessWidget {
               text,
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 14.sp,
+                fontSize: 12.sp,
                 fontWeight: FontWeight.bold,
               ),
               textAlign: TextAlign.center,

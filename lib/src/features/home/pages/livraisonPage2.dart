@@ -129,7 +129,7 @@ class _LivraisonPage2State extends ConsumerState<LivraisonPage2> {
                         title: Text("Expéditeur"),
                         subtitle: Text("0747518089"),
                        
-                        trailing: Assets.images.phone.image(width: 9.w)
+                        //trailing: Assets.images.phone.image(width: 9.w)
                       ),
                       
                        ListTile(

@@ -131,8 +131,7 @@ class _RammassageCommandePage2State extends ConsumerState<RammassageCommandePage
                       ListTile(
                         title: Text("Expéditeur"),
                         subtitle: Text("0747518089"),
-                       
-                        trailing: Assets.images.phone.image(width: 9.w)
+                        //trailing: Assets.images.phone.image(width: 9.w)
                       ),
                       // Column(
                         

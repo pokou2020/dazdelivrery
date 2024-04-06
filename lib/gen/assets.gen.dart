@@ -8,6 +8,8 @@
 // ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
 import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter/services.dart';
 
 class $AssetsFontsGen {
   const $AssetsFontsGen();
@@ -32,6 +34,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/Line 6.png
   AssetGenImage get line6 => const AssetGenImage('assets/images/Line 6.png');
 
+  /// File path: assets/images/animation_500_l3n2rwkf 1.png
+  AssetGenImage get animation500L3n2rwkf1 =>
+      const AssetGenImage('assets/images/animation_500_l3n2rwkf 1.png');
+
   /// File path: assets/images/avatar.png
   AssetGenImage get avatar => const AssetGenImage('assets/images/avatar.png');
 
@@ -50,17 +56,9 @@ class $AssetsImagesGen {
   AssetGenImage get carbonDeliveryParcel =>
       const AssetGenImage('assets/images/carbon_delivery-parcel.png');
 
-  /// File path: assets/images/localisation.png
+  /// File path: assets/images/ci_menu_alt_01.png
   AssetGenImage get ciMenuAlt01 =>
       const AssetGenImage('assets/images/ci_menu_alt_01.png');
-
-      /// File path: assets/images/ci_menu_alt_01.png
-  AssetGenImage get localisation =>
-      const AssetGenImage('assets/images/localisation.png');
-
-      /// File path: assets/images/telephone.png
-  AssetGenImage get phone =>
-      const AssetGenImage('assets/images/telephone.png');
 
   /// File path: assets/images/clarity-eye.png
   AssetGenImage get clarityEye =>
@@ -107,15 +105,24 @@ class $AssetsImagesGen {
   AssetGenImage get icBaselineLogOut =>
       const AssetGenImage('assets/images/ic_baseline-log-out.png');
 
+  /// File path: assets/images/ic_baseline-log-out1.png
   AssetGenImage get icBaselineLogOut1 =>
       const AssetGenImage('assets/images/ic_baseline-log-out1.png');
 
   /// File path: assets/images/icon.jpeg
   AssetGenImage get icon => const AssetGenImage('assets/images/icon.jpeg');
 
+  /// File path: assets/images/localisation.png
+  AssetGenImage get localisation =>
+      const AssetGenImage('assets/images/localisation.png');
+
   /// File path: assets/images/logo-daz.png
   AssetGenImage get logoDaz =>
       const AssetGenImage('assets/images/logo-daz.png');
+
+  /// File path: assets/images/online_dot.svg
+  SvgGenImage get onlineDot =>
+      const SvgGenImage('assets/images/online_dot.svg');
 
   /// File path: assets/images/ph_package-fill.png
   AssetGenImage get phPackageFill =>
@@ -135,14 +142,19 @@ class $AssetsImagesGen {
   AssetGenImage get takeAwayPana =>
       const AssetGenImage('assets/images/take-away-pana.png');
 
+  /// File path: assets/images/telephone.png
+  AssetGenImage get telephone =>
+      const AssetGenImage('assets/images/telephone.png');
+
   /// File path: assets/images/tracking.png
   AssetGenImage get tracking =>
       const AssetGenImage('assets/images/tracking.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [
+  List<dynamic> get values => [
         group218,
         line6,
+        animation500L3n2rwkf1,
         avatar,
         biArrowLeft,
         biArrowRight,
@@ -161,13 +173,17 @@ class $AssetsImagesGen {
         google,
         homeSlide,
         icBaselineLogOut,
+        icBaselineLogOut1,
         icon,
+        localisation,
         logoDaz,
+        onlineDot,
         phPackageFill,
         phPackage,
         pin,
         share,
         takeAwayPana,
+        telephone,
         tracking
       ];
 }
@@ -245,6 +261,59 @@ class AssetGenImage {
       _assetName,
       bundle: bundle,
       package: package,
+    );
+  }
+
+  String get path => _assetName;
+
+  String get keyName => _assetName;
+}
+
+class SvgGenImage {
+  const SvgGenImage(this._assetName);
+
+  final String _assetName;
+
+  SvgPicture svg({
+    Key? key,
+    bool matchTextDirection = false,
+    AssetBundle? bundle,
+    String? package,
+    double? width,
+    double? height,
+    BoxFit fit = BoxFit.contain,
+    AlignmentGeometry alignment = Alignment.center,
+    bool allowDrawingOutsideViewBox = false,
+    WidgetBuilder? placeholderBuilder,
+    String? semanticsLabel,
+    bool excludeFromSemantics = false,
+    SvgTheme theme = const SvgTheme(),
+    ColorFilter? colorFilter,
+    Clip clipBehavior = Clip.hardEdge,
+    @deprecated Color? color,
+    @deprecated BlendMode colorBlendMode = BlendMode.srcIn,
+    @deprecated bool cacheColorFilter = false,
+  }) {
+    return SvgPicture.asset(
+      _assetName,
+      key: key,
+      matchTextDirection: matchTextDirection,
+      bundle: bundle,
+      package: package,
+      width: width,
+      height: height,
+      fit: fit,
+      alignment: alignment,
+      allowDrawingOutsideViewBox: allowDrawingOutsideViewBox,
+      placeholderBuilder: placeholderBuilder,
+      semanticsLabel: semanticsLabel,
+      excludeFromSemantics: excludeFromSemantics,
+      theme: theme,
+      colorFilter: colorFilter,
+      color: color,
+      colorBlendMode: colorBlendMode,
+      clipBehavior: clipBehavior,
+      cacheColorFilter: cacheColorFilter,
     );
   }
 

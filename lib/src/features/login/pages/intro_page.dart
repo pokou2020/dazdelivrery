@@ -37,7 +37,7 @@ class _IntroPageState extends State<IntroPage> {
               Gap(1.h),
               Expanded(
                 child: Center(
-                  child: Assets.images.takeAwayPana.image(),
+                  child: Assets.images.animation500L3n2rwkf1.image(),
                 ),
               ),
               Gap(1.h),
@@ -48,8 +48,6 @@ class _IntroPageState extends State<IntroPage> {
                 },
               ),
               Gap(2.h),
-              const RegistrationText(),
-              Gap(1.h),
             ],
           ),
         ),

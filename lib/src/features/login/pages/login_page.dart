@@ -86,8 +86,6 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                           _submit();
                         },
                       ),
-                      
-                    
                     ],
                   ),
                 ),
@@ -110,6 +108,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
       return;
     }
     Navigator.of(context).pushReplacementNamed(HomePage.name);*/
-    Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => HomePage()), (route) => false);
+    Navigator.pushAndRemoveUntil(context,
+        MaterialPageRoute(builder: (context) => HomePage()), (route) => false);
   }
 }

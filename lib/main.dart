@@ -1,4 +1,3 @@
-
 import 'package:dazdelivery/src/features/login/login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -23,6 +22,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: false,
         fontFamily: 'Raleway',
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          iconTheme: IconThemeData(color: Colors.black),
+        ),
       ),
       home: Sizer(
         builder: (context, _, __) {

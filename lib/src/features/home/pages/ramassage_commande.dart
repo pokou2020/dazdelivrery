@@ -1,22 +1,16 @@
 import 'dart:async';
 
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:dazdelivery/src/features/home/pages/rammassage_commandePage2..dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:gap/gap.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../gen/assets.gen.dart';
 import '../../../common_widgets/common_widgets.dart';
-import '../../../data/data.dart';
 import '../../../theme/theme.dart';
-import '../../delivery/delivery.dart';
-import '../../login/login.dart';
-import '../home.dart';
+import 'CodeLivraiseur.dart';
 import 'drawer.dart';
+import 'livraisonPage1.dart';
 
 class RammassageCommande extends ConsumerStatefulWidget {
   const RammassageCommande({Key? key}) : super(key: key);
@@ -35,56 +29,54 @@ class _RammassageCommandeState extends ConsumerState<RammassageCommande> {
     zoom: 14,
   );
 
+  bool isArrived = false;
+
   @override
   void initState() {
-    //_homeController = ref.read(homeControllerProvider);
-    //_user = _homeController.getUser();
     super.initState();
-    //WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-    //  getDeliveries();
-    //});
+    Future.delayed(Duration(seconds: 3), () {
+      setState(() {
+        isArrived = true;
+      });
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    final double drawerWidth = MediaQuery.of(context).size.width * .8;
     return Scaffold(
       key: _globalKey,
       drawer: Drawers(),
       body: Container(
         decoration: BoxDecoration(
-             image: DecorationImage(image: AssetImage("assets/images/tracking.png"), fit: BoxFit.cover)
+          image: DecorationImage(
+              image: AssetImage("assets/images/tracking.png"),
+              fit: BoxFit.cover),
         ),
         child: SafeArea(
           child: Stack(
             children: [
               Positioned(
+                top: 0,
+                left: 0,
                 child: Padding(
                   padding: EdgeInsets.all(4.w),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Row(
-                        
-                        children: [
-                          Container(
-                              height: 50,
-                              width: 50,
-                              decoration: BoxDecoration(
-                                  color: Colors.white, shape: BoxShape.circle),
-                              child: InkWell(
-                                  onTap: () =>
-                                      _globalKey.currentState?.openDrawer(),
-                                  child: Assets.images.ciMenuAlt01.image())),
-                   
-                        ],
-                      ),
-                    ],
+                  child: Container(
+                    height: 12.w,
+                    width: 12.w,
+                    padding: EdgeInsets.all(1.w),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle,
+                    ),
+                    child: InkWell(
+                      onTap: () => _globalKey.currentState?.openDrawer(),
+                      child: Assets.images.ciMenuAlt01.image(width: 5.w),
+                    ),
                   ),
                 ),
               ),
               //   GoogleMap(
-      
+
               //    initialCameraPosition: _cameraPosition,
               //    onMapCreated: (GoogleMapController controller) {
               //      _completer.complete(controller);
@@ -93,88 +85,148 @@ class _RammassageCommandeState extends ConsumerState<RammassageCommande> {
               Positioned(
                 bottom: 0,
                 child: Container(
-                  height: MediaQuery.of(context).size.height / 2.2,
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
-                           color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(15),
-                          topRight: Radius.circular(15))),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(6.w),
+                      topRight: Radius.circular(6.w),
+                    ),
+                  ),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       InkWell(
-                       
                         child: Container(
-                          height: 50,
-                          width: MediaQuery.of(context).size.width,
                           decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 237, 247, 255),
-                              borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(15),
-                                  topRight: Radius.circular(15))),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text("Ramassage de commande"),
-                              SizedBox(
-                                width: 10,
-                              ),
-                            
-                            ],
+                            color: Color(0xffF5F9F8),
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(6.w),
+                              topRight: Radius.circular(6.w),
+                            ),
+                          ),
+                          padding: EdgeInsets.all(4.w),
+                          child: Text(
+                            "Ramassage de commande",
+                            style: TextStyle(
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            textAlign: TextAlign.center,
                           ),
                         ),
                       ),
-                      ListTile(
-                        title: Text("Expéditeur"),
-                        subtitle: Text("0747518089"),
-                       
-                        trailing: Assets.images.phone.image(width: 9.w),
-                      ),
-                        ListTile(
-                      title: Text("Adresse"),
-                      subtitle: Text("1245 Boulevard Angré Chateau Cocody Cote d'ivoire"),
-                      trailing:Assets.images.localisation.image(width: 9.w),
-                      ),
-                       ListTile(
-                      title: Text("Client et numèro de commande"),
-                      subtitle: Text("Alimata Traoré Commande #hsgvbftg"),
-                       
-                      ),
-                      
-                      InkWell(
-                      onTap: (){
-                         Navigator.push(context, MaterialPageRoute(builder: (context)=>RammassageCommandePage2()));
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Center(child: Text("En route vers le point de retrait...",
-                        style: TextStyle(
-                      color: Colors.green
+                      Padding(
+                        padding: EdgeInsets.all(4.w),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Expéditeur",
+                                    style: TextStyle(
+                                      fontSize: 12.sp,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                  Text(
+                                    "0758271213",
+                                    style: TextStyle(
+                                      fontSize: 12.sp,
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                            Container(
+                              decoration: BoxDecoration(
+                                color: AppColors.green,
+                                shape: BoxShape.circle,
+                              ),
+                              width: 10.w,
+                              height: 10.w,
+                              padding: EdgeInsets.all(2.w),
+                              child: Icon(
+                                Icons.call,
+                                color: Colors.white,
+                              ),
+                            )
+                          ],
                         ),
-                        )),
                       ),
+                      Padding(
+                        padding: EdgeInsets.all(4.w),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Adresse",
+                                    style: TextStyle(
+                                      fontSize: 12.sp,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                  Text(
+                                    "1245 Boulevard\nAngré Chateau,\nCocody, Côte d’Ivoire",
+                                    style: TextStyle(
+                                      fontSize: 12.sp,
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                shape: BoxShape.circle,
+                              ),
+                              width: 10.w,
+                              height: 10.w,
+                              child:
+                                  Assets.images.localisation.image(width: 5.w),
+                            )
+                          ],
+                        ),
                       ),
-                      // Column(
-                        
-                      //   crossAxisAlignment: CrossAxisAlignment.start,
-                      //   children: [
-                      //       Row(
-                      //         children: [
-                      //           Text("Adresse"),
-                      //         ],
-                      //       ),
-                      //        Text('1245 Boulevard'),
-                      //         Text(" Angré Chateau Cocody"),
-                      //         Text("Cote d'ivoire"),
-                      //   ],
-                      // ),
-                     
-                     
-                
-                   
-                     
-                     
-                    
+                      Padding(
+                        padding: EdgeInsets.all(4.w),
+                        child: !isArrived
+                            ? Text(
+                                "En route vers le point de retrait...",
+                                style: TextStyle(
+                                  color: AppColors.green,
+                                  fontSize: 12.sp,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                textAlign: TextAlign.center,
+                              )
+                            : SubmitButton(
+                                text: "Je suis arrivé au point de retrait",
+                                onTap: () async {
+                                  var result = await Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => CodeLivraiseur1(),
+                                    ),
+                                  );
+                                  if (result != null) {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => LivraisonPage1(),
+                                      ),
+                                    );
+                                  }
+                                },
+                              ),
+                      ),
                     ],
                   ),
                 ),
