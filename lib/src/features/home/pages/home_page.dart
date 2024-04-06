@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:dazdelivery/src/features/home/pages/historique.dart';
 import 'package:dazdelivery/src/features/home/pages/ramassage_commande.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +19,7 @@ import '../../../theme/theme.dart';
 import '../../delivery/delivery.dart';
 import '../../login/login.dart';
 import '../home.dart';
+import 'DazCash.dart';
 import 'drawer.dart';
 
 class HomePage extends ConsumerStatefulWidget {
@@ -37,9 +39,144 @@ class _HomePageState extends ConsumerState<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final double drawerWidth = MediaQuery.of(context).size.width * .8;
     return Scaffold(
       key: _globalKey,
-      drawer: Drawers(),
+      drawer: SafeArea(
+        child: Container(
+          color: Colors.white,
+          width: drawerWidth,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Container(
+                decoration: const BoxDecoration(
+                  color: AppColors.green,
+                ),
+                padding: EdgeInsets.symmetric(
+                  horizontal: 4.w,
+                  vertical: 4.h,
+                ),
+                child: Row(
+                  children: [
+                    CircleAvatar(),
+                    Gap(3.w),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Patrick Tiess",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14.sp,
+                            ),
+                          ),
+                          Gap(0.5.h),
+                          Text(
+                            "patricktiess@gmail.com",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 12.sp,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Gap(1.w),
+                    Assets.images.clarityEditSolid.image(width: 6.w)
+                  ],
+                ),
+              ),
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.all(4.w),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "MENU",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Gap(3.h),
+                      DrawerMenuItem(
+                        icon: Assets.images.layoutGrid,
+                        text: "Daz",
+                        onTap: () {
+                          //Navigator.pushNamed(context, DeliveryListPage.name)
+                        },
+                      ),
+                      Gap(3.h),
+                      DrawerMenuItem(
+                        icon: Assets.images.carbonDeliveryParcel,
+                        text: "Mes livraisons",
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Historique(),
+                            ),
+                          );
+                        },
+                      ),
+                      Gap(3.h),
+                      DrawerMenuItem(
+                        icon: Assets.images.laCoins,
+                        text: "Daz Cash",
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => DazCash(),
+                            ),
+                          );
+                        },
+                      ),
+                      Spacer(),
+                      DrawerMenuItem(
+                        icon: Assets.images.icBaselineLogOut,
+                        color: AppColors.red,
+                        text: "Déconnexion",
+                        onTap: () {
+                          showInfoDialog(
+                            context,
+                            message: "Se déconnecter ?",
+                            positiveLabel: "OUI",
+                            negativeLabel: "NON",
+                            positiveCallBack: () {
+                              //_homeController.logout();
+                              Navigator.pushAndRemoveUntil(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => LoginPage(),
+                                  ),
+                                  (route) => false);
+                            },
+                          );
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Gap(10.w),
+              Padding(
+                padding: EdgeInsets.all(4.w),
+                child: const Text(
+                  "Copyright daz 2022",
+                  style: TextStyle(
+                    color: AppColors.greyDark,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(

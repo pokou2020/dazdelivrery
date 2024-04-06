@@ -215,7 +215,7 @@ class _CodeLivraiseur1State extends ConsumerState<CodeLivraiseur1> {
             SubmitButton(
               text: "Valider",
               onTap: () {
-               Navigator.pop(context, true);
+                Navigator.pop(context, true);
               },
             ),
             Gap(3.w),
@@ -241,7 +241,7 @@ class _CodeLivraiseur1State extends ConsumerState<CodeLivraiseur1> {
                       TextSpan(
                         text: "Le client n'a pas recu le code",
                         style: TextStyle(
-                          color: Color(0xffCE2C09),
+                          color: AppColors.red,
                         ),
                       ),
                     ],

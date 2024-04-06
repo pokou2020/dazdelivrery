@@ -87,6 +87,9 @@ class $AssetsImagesGen {
   AssetGenImage get facebook =>
       const AssetGenImage('assets/images/facebook.png');
 
+  /// File path: assets/images/file.svg
+  SvgGenImage get file => const SvgGenImage('assets/images/file.svg');
+
   /// File path: assets/images/fluent_my-location-12-regular.png
   AssetGenImage get fluentMyLocation12Regular =>
       const AssetGenImage('assets/images/fluent_my-location-12-regular.png');
@@ -111,6 +114,14 @@ class $AssetsImagesGen {
 
   /// File path: assets/images/icon.jpeg
   AssetGenImage get icon => const AssetGenImage('assets/images/icon.jpeg');
+
+  /// File path: assets/images/la_coins.png
+  AssetGenImage get laCoins =>
+      const AssetGenImage('assets/images/la_coins.png');
+
+  /// File path: assets/images/layout_grid.png
+  AssetGenImage get layoutGrid =>
+      const AssetGenImage('assets/images/layout_grid.png');
 
   /// File path: assets/images/localisation.png
   AssetGenImage get localisation =>
@@ -168,6 +179,7 @@ class $AssetsImagesGen {
         copy,
         epSetting,
         facebook,
+        file,
         fluentMyLocation12Regular,
         gift,
         google,
@@ -175,6 +187,8 @@ class $AssetsImagesGen {
         icBaselineLogOut,
         icBaselineLogOut1,
         icon,
+        laCoins,
+        layoutGrid,
         localisation,
         logoDaz,
         onlineDot,
