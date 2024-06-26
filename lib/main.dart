@@ -1,5 +1,6 @@
 
-import 'package:dazdelivery/src/features/login/login.dart';
+
+import 'package:dazdelivery/src/screem/start_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sizer/sizer.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Sizer(
         builder: (context, _, __) {
-          return const IntroPage();
+          return const StartPage();
         },
       ),
     );
